@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:00:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 16:17:07 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:31:46 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@
 
 class Brain {
 
+private:
+    std::string _ideas[100];
+
 public:
-    std::string ideas[100];
     Brain();
     ~Brain();
     
-    Brain(Brain const &src);
+    Brain(Brain const &other);
     Brain& operator=(Brain const &rhs);
+    void setIdea(std::string idea);
+    std::string getIdea() const;
+    void printIdeas();
 };
 
 #endif

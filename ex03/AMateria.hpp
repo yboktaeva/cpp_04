@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:33:11 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 18:01:04 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 22:50:15 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ public:
     virtual ~AMateria();
     
     AMateria(std::string const& type);
-    AMateria(AMateria const& src);
-    AMateria& operator=(AMateria const &rhs);
+    AMateria(AMateria const& other);
+    AMateria& operator=(AMateria const& rhs);
 
     std::string const& getType() const;
     

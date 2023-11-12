@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:54 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 15:50:13 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:08:54 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal() {
+Cat::Cat(): Animal("Cat") {
 
-    type = "Cat";
     std::cout << "Default constructor called for " << type << std::endl;
 }
 
@@ -23,11 +22,9 @@ Cat::~Cat() {
     std::cout << type << " is destructed" << std::endl;        
 }
 
-Cat::Cat(Cat const &src): Animal(src) {
+Cat::Cat(Cat const &other): Animal(other) {
 
-	type = src.type;
-    
-	std::cout << type << " is constructed via Copy constructor from " << src.type << std::endl;
+	std::cout << type << " is constructed via Copy constructor from " << other.type << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &rhs) {
@@ -35,7 +32,6 @@ Cat &Cat::operator=(Cat const &rhs) {
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
-    
 	std::cout << "Cat: assignment operator called" << std::endl;
     
 	return (*this);
@@ -43,5 +39,5 @@ Cat &Cat::operator=(Cat const &rhs) {
 
 void Cat::makeSound() const {
 
-    std::cout << type << ": Meow!" << std::endl;
+    std::cout << type << "said Meow!" << std::endl;
 }

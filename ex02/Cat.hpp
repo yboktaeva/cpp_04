@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:06 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 16:15:02 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:13:22 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ public:
     Cat();
     ~Cat();
     
-    Cat(Cat const& src);
+    Cat(Cat const& other);
     Cat& operator=(Cat const& rhs);
-    
+    void setIdea(std::string idea);
+    std::string getIdea() const;
     virtual void makeSound() const;
 };
 

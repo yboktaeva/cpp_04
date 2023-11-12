@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:00:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 19:10:39 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:31:59 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ public:
     Brain();
     ~Brain();
     
-    Brain(Brain const &src);
+    Brain(Brain const &other);
     Brain& operator=(Brain const &rhs);
-    void setIdeas(std::string const& idea);
+    void setIdea(std::string idea);
+    std::string getIdea() const;
     void printIdeas();
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:43:00 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 17:57:19 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 23:01:32 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ AMateria::~AMateria() {
     std::cout << "AMateria " << _type << " is destructed" << std::endl;   
 }
 
-AMateria::AMateria(AMateria const& src) {
+AMateria::AMateria(AMateria const& other) {
     
-    _type = src._type;
-    std::cout << "AMateria " << _type << " is constructed via Copy constructor from " << src._type << std::endl;
+    _type = other._type;
+    std::cout << "AMateria " << _type << " is constructed via Copy constructor from " << other._type << std::endl;
 }
 
-AMateria &AMateria::operator=(AMateria const &rhs) {
+AMateria &AMateria::operator=(AMateria const& rhs) {
 	
 	if (this == &rhs)
 		return (*this);

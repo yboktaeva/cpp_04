@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:06 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 15:48:44 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:05:42 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     Cat();
     ~Cat();
     
-    Cat(Cat const& src);
+    Cat(Cat const& other);
     Cat& operator=(Cat const& rhs);
     
     virtual void makeSound() const;

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+         #
+#    By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 12:02:06 by yuboktae          #+#    #+#              #
-#    Updated: 2023/11/10 17:32:38 by yuboktae         ###   ########.fr        #
+#    Updated: 2023/11/12 21:56:15 by yuliaboktae      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = AMateria
 
-SRC	= main.cpp AMateria.cpp
+SRC	= main.cpp AMateria.cpp MateriaSource.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

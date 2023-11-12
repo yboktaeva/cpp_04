@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:28 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 15:48:55 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:04:29 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     Dog();
     ~Dog();
     
-    Dog(Dog const& src);
+    Dog(Dog const& other);
     Dog& operator=(Dog const& rhs);
     
     virtual void makeSound() const;

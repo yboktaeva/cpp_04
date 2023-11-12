@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:31:55 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 15:48:34 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:43:45 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     WrongCat();
     ~WrongCat();
     
-    WrongCat(WrongCat const& src);
+    WrongCat(WrongCat const& other);
     WrongCat& operator=(WrongCat const& rhs);
     
     void makeSound() const;

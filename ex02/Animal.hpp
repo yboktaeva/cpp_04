@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:42 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/10 16:39:20 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:33:07 by yuliaboktae      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ protected:
     
 public:
     Animal();
+    Animal(const std::string name);
     virtual ~Animal();
     
-    Animal(Animal const& src);
+    Animal(Animal const& other);
     Animal& operator=(Animal const& rhs);
-    std::string getType() const;
+    const std::string &getType() const;
     
     virtual void makeSound() const = 0;
 };
