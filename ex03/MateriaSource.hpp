@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:53:45 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/12 22:57:02 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 16:32:21 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     MateriaSource(MateriaSource const& other);
     MateriaSource& operator=(MateriaSource const& rhs);
     
-    void learnMateria(AMateria* a);
+    void learnMateria(AMateria* m);
     AMateria* createMateria(std::string const& type);
 
 };

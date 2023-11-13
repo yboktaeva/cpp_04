@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:27:28 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/12 20:43:29 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 16:23:22 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

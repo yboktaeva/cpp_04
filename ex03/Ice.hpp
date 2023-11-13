@@ -3,17 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 23:17:05 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/12 23:18:03 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 18:48:00 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
 
-class Ice {
+# include "AMateria.hpp"
+
+class Ice: virtual AMateria {
+public:
+    Ice();
+    ~Ice();
+    Ice(Ice const& other);
+    Ice& operator=(Ice const& rhs);
     
+    virtual void use(ICharacter& target);
+    virtual AMateria* clone() const;
 };
 #endif

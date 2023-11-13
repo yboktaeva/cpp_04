@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:06 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/12 20:05:42 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 16:21:42 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cat: virtual public Animal {
 
 public:
     Cat();
-    ~Cat();
+    virtual ~Cat();
     
     Cat(Cat const& other);
     Cat& operator=(Cat const& rhs);

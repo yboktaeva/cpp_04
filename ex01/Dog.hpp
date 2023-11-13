@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:28 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/12 21:19:11 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 16:26:43 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 
 public:
     Dog();
-    ~Dog();
+    virtual ~Dog();
     
     Dog(Dog const& other);
     Dog& operator=(Dog const& rhs);

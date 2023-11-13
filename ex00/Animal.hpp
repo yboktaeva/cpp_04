@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:42 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/12 20:02:02 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 16:21:01 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

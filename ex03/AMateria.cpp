@@ -3,50 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuliaboktaeva <yuliaboktaeva@student.42    +#+  +:+       +#+        */
+/*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:43:00 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/12 23:01:32 by yuliaboktae      ###   ########.fr       */
+/*   Updated: 2023/11/13 19:25:07 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(): _type("no_name") {
-    
-    std::cout << "Default constructor called for " << "AMateria " << _type << std::endl;
+AMateria::AMateria(): type("noType") {
 }
 
-AMateria::AMateria(std::string const& type): _type(type) {
-    
-    std::cout << "Default constructor called for " << "AMateria " << _type << std::endl;
+AMateria::AMateria(std::string const& type): type(type) {
 }
 
 AMateria::~AMateria() {
-    
-    std::cout << "AMateria " << _type << " is destructed" << std::endl;   
 }
 
 AMateria::AMateria(AMateria const& other) {
-    
-    _type = other._type;
-    std::cout << "AMateria " << _type << " is constructed via Copy constructor from " << other._type << std::endl;
+    type = other.type;
 }
 
 AMateria &AMateria::operator=(AMateria const& rhs) {
-	
 	if (this == &rhs)
 		return (*this);
-	this->_type = rhs._type;
-    
-	std::cout << "AMateria: assignment operator called" << std::endl;
-    
+	this->type = rhs.type;
 	return (*this);
 }
 
 std::string const& AMateria::getType() const {
+    return this->type;
+}
 
-    return this->_type;
+void AMateria::use(ICharacter& target) {
+    std::cout << "* uses some materia at " << target.getName() << std::endl;
 }
 
 // AMateria::clone() const {

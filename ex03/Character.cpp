@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 21:37:55 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/13 16:31:56 by yuboktae         ###   ########.fr       */
+/*   Created: 2023/11/13 19:10:06 by yuboktae          #+#    #+#             */
+/*   Updated: 2023/11/13 19:32:37 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#include "Character.hpp"
 
-#include "AMateria.hpp"
-
-class IMateriaSource {
-    
-public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria* m) = 0;
-    virtual AMateria* createMateria(std::string const& type) = 0;
-};
-
-#endif
+Character::Character() {
+    for (int i = 0; i < 4; ++i)
+        inventory[i] = NULL;
+}
