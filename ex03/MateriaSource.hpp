@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:53:45 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/13 16:32:21 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:36:36 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class MateriaSource: public IMateriaSource {
     
 protected:
     AMateria *inventory[4];
+    int materiaCount;
 public:
     MateriaSource();
     ~MateriaSource();
@@ -27,7 +28,6 @@ public:
     
     void learnMateria(AMateria* m);
     AMateria* createMateria(std::string const& type);
-
 };
 
 #endif

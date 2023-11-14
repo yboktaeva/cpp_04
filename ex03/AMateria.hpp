@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:33:11 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 19:02:57 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:11:57 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class ICharacter;
 
 class AMateria {
-    
 protected:
     std::string type;
 

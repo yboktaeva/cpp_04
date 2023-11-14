@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:45:42 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 18:47:44 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:39:21 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define CURE_HPP
 
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Cure: virtual AMateria {
+class Cure: public AMateria {
 public:
     Cure();
-    ~Cure();
+    virtual ~Cure();
     Cure(Cure const& other);
     Cure& operator=(Cure const& rhs);
     
