@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 12:04:28 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:29:46 by yuboktae         ###   ########.fr       */
+/*   Created: 2023/11/10 16:00:40 by yuboktae          #+#    #+#             */
+/*   Updated: 2023/11/15 19:44:29 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# define BLUE "\033[1;34m"
+# define GREEN "\033[1;32m"
+# define RESET "\033[0m"
 
-class Dog: virtual public Animal {
+# include <string>
+# include <iostream>
+
+class Brain {
 
 private:
-    Brain* _brain;
-
+    std::string _ideas[100];
+    int idx;
 public:
-    Dog();
-    virtual ~Dog();
+    Brain();
+    ~Brain();
     
-    Dog(Dog const& other);
-    Dog& operator=(Dog const& rhs);
-    void setIdea(std::string idea);
-    std::string getIdea() const;
-    virtual void makeSound() const;
+    Brain(Brain const &other);
+    Brain& operator=(Brain const &rhs);
+    void setIdea(std::string idea, int idx);
+    std::string getIdea(int idx) const;
+    void printIdeas();
 };
 
 #endif

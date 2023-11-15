@@ -6,13 +6,14 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:17 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:46:37 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:33:40 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog(): Animal("Dog") {
+	idx = 0;
 	_brain = new Brain;
     std::cout << "Default constructor called for " << type << std::endl;
 }
@@ -40,13 +41,13 @@ Dog &Dog::operator=(Dog const &rhs) {
 }
 
 void Dog::makeSound() const {
-    std::cout << type << "said Woof!" << std::endl;
+    std::cout  << GREEN << type << " said Woof!" << RESET << std::endl;
 }
 
-void Dog::setIdea(std::string idea) {
-	this->_brain->setIdea(idea);
+void Dog::setIdea(std::string idea, int idx) {
+	this->_brain->setIdea(idea, idx);
 }
 
-std::string Dog::getIdea() const {
-	return this->_brain->getIdea();
+std::string Dog::getIdea(int idx) const {
+	return this->_brain->getIdea(idx);
 }

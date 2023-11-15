@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 22:40:20 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/14 19:01:28 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:48:19 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource() {
     materiaCount = 0;
     for (int i = 0; i < 4; ++i)
-        inventory[i] = NULL;
+        inventory[i] = 0;
 }
 
 MateriaSource::~MateriaSource() {
@@ -42,31 +42,29 @@ MateriaSource &MateriaSource::operator=(MateriaSource const& rhs) {
 
 void MateriaSource::learnMateria(AMateria* m) {
     if (!m) {
-        std::cout << "No materia, nothing to learn" << std::endl;
+        std::cout << "No materia, nothing to learn!" << std::endl;
         return ;
     }
     if (materiaCount >= 4) {
-        std::cout << "Too much materia!" << std::endl;
+        std::cout << "Cannot learn Materia! No more place" << std::endl;
         return ;
     }
-    for (int i = 0; i < materiaCount; ++i) {
-        if (m->getType() == inventory[i]->getType()) {
-            std::cout << "Materia " << m->getType() << " already exist" << std::endl;
+    for (int i = 0; i < 4; ++i) {
+        if (inventory[i] != NULL && (m->getType() == inventory[i]->getType())) {
+            std::cout << "Materia " << m->getType() << " already exist!" << std::endl;
             delete m;
             return ;
         }
-        inventory[materiaCount] = m;
-        materiaCount++;
     }
+    inventory[materiaCount] = m;
+    materiaCount++;
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
-    if (type == "ice" || type == "cure") {
-        for (int i = 0; i < materiaCount; ++i) {
-            if (inventory[i] && inventory[i]->getType() == type)
-                return (inventory[i]->clone());
-        }
+    for (int i = 0; i < materiaCount; ++i) {
+        if (inventory[i] && inventory[i]->getType() == type)
+            return (inventory[i]->clone());
     }
-    std::cout << "Unknown Materia " << type << ". Cannot create it" << std::endl; 
+    std::cout << "Unknown Materia " << type << ". Cannot create it!" << std::endl; 
     return 0;
 }

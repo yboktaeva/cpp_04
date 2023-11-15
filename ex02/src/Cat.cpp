@@ -6,13 +6,14 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:54 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:28:57 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:33:13 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat(): Animal("Cat") {
+	idx = 0;
 	_brain = new Brain;
     std::cout << "Default constructor called for " << type << std::endl;
 }
@@ -40,13 +41,13 @@ Cat &Cat::operator=(Cat const &rhs) {
 }
 
 void Cat::makeSound() const {
-    std::cout << type << "said Meow!" << std::endl;
+    std::cout << GREEN << type << " said Meow!" << RESET << std::endl;
 }
 
-void Cat::setIdea(std::string idea) {
-	this->_brain->setIdea(idea);
+void Cat::setIdea(std::string idea, int idx) {
+	this->_brain->setIdea(idea, idx);
 }
 
-std::string Cat::getIdea() const {
-	return this->_brain->getIdea();
+std::string Cat::getIdea(int idx) const {
+	return this->_brain->getIdea(idx);
 }

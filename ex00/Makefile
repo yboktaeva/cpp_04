@@ -6,32 +6,40 @@
 #    By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 11:15:02 by yuboktae          #+#    #+#              #
-#    Updated: 2023/11/10 16:29:52 by yuboktae         ###   ########.fr        #
+#    Updated: 2023/11/15 14:21:55 by yuboktae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animal
 
-SRC	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC_DIR = src/
+OBJ_DIR = obj/
+INC_DIR = includes/
 
+SRC_FILES	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))
+
+RM = rm -f
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-OBJ	= $(SRC:%.cpp=%.o)
+CPPFLAGS = -I/usr/local/include -I$(INC_DIR)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ $(OBJ)
 
-%.o: %.cpp *.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

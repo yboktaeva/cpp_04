@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:10:06 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/14 18:33:22 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:27:54 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,33 @@ void Character::equip(AMateria* m) {
             return ;
         }
     }
-    for (int i = 0; i < 4; ++i) {
+    int i;
+    for ( i = 0; i < 4; ++i) {
         if (!inventory[i]) {
             inventory[i] = m;
             std::cout << name << " has taken " << m->getType() << std::endl;
             return ;
         }
     }
+    if (i == 4)
+        {
+            delete (m);
+            std::cout <<"No slot available to add" << std::endl;
+        }
 }
 
 void Character::unequip(int idx) {
-    if (inventory[idx])
+    if (idx < 4 && idx > 0 && inventory[idx])
         inventory[idx] = NULL;
+    // else
+    //     std::cout << "Cannot unequip player. The Materia does not exist!" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target) {
-    if (inventory[idx])
+    if (inventory[idx] && idx < 4)
         inventory[idx]->use(target);
+    // else
+    //     std::cout << "No more Materia! You need to equip your player!" << std::endl;
 }
 
 std::string const& Character::getName() const {

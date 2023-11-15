@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 18:43:25 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 18:56:38 by yuboktae         ###   ########.fr       */
+/*   Created: 2023/11/13 18:45:51 by yuboktae          #+#    #+#             */
+/*   Updated: 2023/11/15 18:01:40 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice(): AMateria("ice") { 
+Cure::Cure(): AMateria("cure") {
 }
 
-Ice::~Ice() {
+Cure::~Cure() {
 }
 
-Ice::Ice(Ice const& other) {
-    *this = other;
+Cure::Cure(Cure const& other): AMateria(other.getType()) {
 }
 
-Ice& Ice::operator=(Ice const& rhs) {
+Cure& Cure::operator=(Cure const& rhs) {
     if (this == &rhs)
         return *this;
     this->type = rhs.type;
     return *this;
 }
 
-AMateria *Ice::clone() const {
-    Ice* tmp = new Ice();
+AMateria *Cure::clone() const {
+    Cure* tmp = new Cure();
     *tmp = *this;
     return tmp;
 }
 
-void Ice::use(ICharacter &target) {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+void Cure::use(ICharacter &target) {
+    std::cout << "* heals " << target.getName()<< "'s wounds *" << std::endl;
 }

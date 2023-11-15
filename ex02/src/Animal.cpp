@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:23 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:28:09 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:34:04 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ const std::string& Animal::getType() const {
 }
 
 void Animal::makeSound() const {
-    std::cout << "Animal " << type << ": I can't make sound" << std::endl;
+    std::cout << GREEN << "Animal " << type << ": I can't make sound" << RESET << std::endl;
 }

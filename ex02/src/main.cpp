@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:59:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 18:37:29 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:48:26 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,20 @@ int main() {
 	std::cout << "__________________________________________" << std::endl;
     std::cout << "__________________________________________" << std::endl;
 
-	dynamic_cast<Cat*>(const_cast<Animal*>(i))->setIdea("I hate the dogs!");
-    dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I hate the cats!");
+	dynamic_cast<Cat*>(const_cast<Animal*>(i))->setIdea("I hate the dogs!", 0);
+    dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I hate the cats!", 0);
+	dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I'm hungry!", 1);
 
-    std::cout << dynamic_cast<Cat*>(const_cast<Animal*>(i))->getIdea() << std::endl;
-    std::cout << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea() << std::endl;
+    std::cout << BLUE << dynamic_cast<Cat*>(const_cast<Animal*>(i))->getIdea(0) << RESET << std::endl;
+    std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea(1) << RESET << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+    std::cout << "__________________________________________" << std::endl;
+	
+	const Animal* k = new Dog(*dynamic_cast<const Dog*>(j));
+	std::cout << k->getType() << " " << std::endl;
+    std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(k))->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(k))->getIdea(1) << RESET << std::endl;
 	std::cout << "__________________________________________" << std::endl;
     std::cout << "__________________________________________" << std::endl;
 
