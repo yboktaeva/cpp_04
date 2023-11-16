@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:59:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/16 16:55:48 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 19:02:26 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,10 @@ int	main() {
 	std::cout << BLUE << copyToto->getIdea(1) << RESET << std::endl;
 	std::cout << BLUE << copyToto->getIdea(2) << RESET << std::endl;
 	std::cout << BLUE << copyToto->getIdea(3) << RESET << std::endl;
+	std::cout << "ORIGINAL TOTO's IDEAS" << std:: endl;
+	std::cout << BLUE << toto->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << toto->getIdea(1) << RESET << std::endl;
+	std::cout << BLUE << toto->getIdea(2) << RESET << std::endl;
     std::cout << "__________________________________________" << std::endl;
 	std::cout << "__________________________________________" << std::endl;
 	
