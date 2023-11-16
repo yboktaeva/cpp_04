@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:07:22 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 19:47:47 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:06:50 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Brain::~Brain() {
 
 Brain::Brain(Brain const &other) {
 	if (this != &other) {
-		
 		for (int i = 0; i < 100; ++i)
 			_ideas[i] = other._ideas[i];
 	}

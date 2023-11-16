@@ -6,13 +6,14 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:07:22 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:25:40 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:49:24 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 Brain::Brain() {
+	idx = 0;
     std::cout << "Default constructor called for Brain" << std::endl;
 }
 
@@ -22,7 +23,6 @@ Brain::~Brain() {
 
 Brain::Brain(Brain const &other) {
 	if (this != &other) {
-		
 		for (int i = 0; i < 100; ++i)
 			_ideas[i] = other._ideas[i];
 	}
@@ -37,10 +37,17 @@ Brain &Brain::operator=(Brain const &rhs) {
 	return (*this);
 }
 
-void Brain::setIdea(std::string idea) {
-	this->_ideas[0] = idea;
+void Brain::setIdea(std::string idea, int idx) {
+	if (idx >= 0 && idx < 100) 
+		this->_ideas[idx] = idea;
+	else
+		std::cout << GREEN << "I can have only 100 ideas! Please choose between 0 and 99 included" << RESET << std::endl;
 }
 
-std::string Brain::getIdea() const {
-	return this->_ideas[0];
+std::string Brain::getIdea(int idx) const {
+	if (idx >=0 && idx < 100)
+		return this->_ideas[idx];
+	else
+		return "";
 }
+

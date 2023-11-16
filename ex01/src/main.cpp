@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:59:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 18:36:05 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:55:48 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int	main() {
 	std::cout << "__________________________________________" << std::endl;
-	std::cout << "__________________TESTS___________________" << std::endl;
+	std::cout << "__________________TEST1___________________" << std::endl;
+	
 	const Animal* j = new Dog();
     const Animal* i = new Cat();
 	std::cout << "__________________________________________" << std::endl;
@@ -28,14 +29,32 @@ int	main() {
 	std::cout << "__________________________________________" << std::endl;
     std::cout << "__________________________________________" << std::endl;
 
-	dynamic_cast<Cat*>(const_cast<Animal*>(i))->setIdea("I hate the dogs!");
-    dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I hate the cats!");
-
-    std::cout << dynamic_cast<Cat*>(const_cast<Animal*>(i))->getIdea() << std::endl;
-    std::cout << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea() << std::endl;
+	dynamic_cast<Cat*>(const_cast<Animal*>(i))->setIdea("I hate the dogs!", 0);
+    dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I hate the cats!", 0);
+	dynamic_cast<Dog*>(const_cast<Animal*>(j))->setIdea("I'm hungry!", 1);
+	
+	std::cout << BLUE << dynamic_cast<Cat*>(const_cast<Animal*>(i))->getIdea(0) << RESET << std::endl;
+    std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(j))->getIdea(1) << RESET << std::endl;
 	std::cout << "__________________________________________" << std::endl;
     std::cout << "__________________________________________" << std::endl;
 
+	const Animal* k = new Dog(*dynamic_cast<const Dog*>(j));
+	std::cout << k->getType() << " " << std::endl;
+	
+	std::cout << "__________________________________________" << std::endl;
+    std::cout << "__________________________________________" << std::endl;
+	
+    std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(k))->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << dynamic_cast<Dog*>(const_cast<Animal*>(k))->getIdea(1) << RESET << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+    std::cout << "__________________________________________" << std::endl;
+	
+	delete i, delete j, delete k;
+	
+	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________TEST2___________________" << std::endl;
+	
 	const Animal* meta[4];
 	
 	for (int i = 0; i < 4; i++) {
@@ -47,13 +66,47 @@ int	main() {
 	std::cout << "__________________________________________" << std::endl;
     std::cout << "__________________________________________" << std::endl;
 	
-	delete i, delete j;
-	std::cout << "__________________________________________" << std::endl;
-    std::cout << "__________________________________________" << std::endl;
-
-	
 	for (int i = 0; i < 4; ++i)
 		delete meta[i];
 		
-	return (0);
+	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________TEST3___________________" << std::endl;
+	
+	Dog* toto = new Dog();
+	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+	
+	toto->setIdea("Hello!", 0);
+    toto->setIdea("I hate the cats!", 1);
+	toto->setIdea("I'm hungry!", 2);
+	
+	std::cout << BLUE << toto->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << toto->getIdea(1) << RESET << std::endl;
+	std::cout << BLUE << toto->getIdea(2) << RESET << std::endl;
+    std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+
+	Dog* copyToto = new Dog(*toto);
+	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+	
+	std::cout << BLUE << copyToto->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << copyToto->getIdea(1) << RESET << std::endl;
+	std::cout << BLUE << copyToto->getIdea(2) << RESET << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+	
+    copyToto->setIdea("I like the cats!", 1);
+	copyToto->setIdea("We gonna playing?", 3);
+	
+	std::cout << BLUE << copyToto->getIdea(0) << RESET << std::endl;
+	std::cout << BLUE << copyToto->getIdea(1) << RESET << std::endl;
+	std::cout << BLUE << copyToto->getIdea(2) << RESET << std::endl;
+	std::cout << BLUE << copyToto->getIdea(3) << RESET << std::endl;
+    std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+	
+	delete toto, delete copyToto;
+	
+	return 0;
 }

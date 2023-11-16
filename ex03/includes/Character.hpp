@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:09:54 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 14:59:32 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:42 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class Character: public ICharacter {
 private:
     AMateria* inventory[4];
     std::string name;
-    
+    AMateria** floor;
+    int floorSize;
+    int maxFloorSize;
 public:
     Character();
     Character(std::string name);

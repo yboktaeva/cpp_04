@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:00:40 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 19:44:29 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:03:27 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ public:
     Brain& operator=(Brain const &rhs);
     void setIdea(std::string idea, int idx);
     std::string getIdea(int idx) const;
-    void printIdeas();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:03:51 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 18:30:13 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:58:56 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main() {
     std::cout << "__________________________________________" << std::endl;
-	std::cout << "__________________TESTS___________________" << std::endl;
+	std::cout << "__________________TEST1___________________" << std::endl;
     
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
@@ -39,7 +39,7 @@ int main() {
     delete src;
     
     std::cout << "__________________________________________" << std::endl;
-	std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________TEST2___________________" << std::endl;
     
     IMateriaSource* src1 = new MateriaSource();
     src1->learnMateria(new Ice());
@@ -57,40 +57,41 @@ int main() {
     temp = src1->createMateria("ice");
     john->equip(temp);
     
-    ICharacter* jeck = new Character("jeck");
-    Character *test = new Character("test");
-    ICharacter* test_copy = new Character(*test);
-    john->use(0, *jeck);
-    john->use(1, *jeck);
+    ICharacter* jack = new Character("jack");
+    john->use(0, *jack);
+    john->use(1, *jack);
     
     std::cout << "__________________________________________" << std::endl;
 	std::cout << "__________________________________________" << std::endl;
     
     temp1 = src1->createMateria("ice");
-    jeck->equip(temp1);
+    jack->equip(temp1);
     temp1 = src1->createMateria("ice");
-    jeck->equip(temp1);
+    jack->equip(temp1);
     temp1 = src1->createMateria("ice");
-    jeck->equip(temp1);
+    jack->equip(temp1);
     temp1 = src1->createMateria("cure");
-    jeck->equip(temp1);
+    jack->equip(temp1);
     temp1 = src1->createMateria("cure");
-    jeck->equip(temp1);
-    jeck->unequip(4);
+    jack->equip(temp1);
+    
+    std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+    
+    jack->unequip(0);
+    jack->unequip(1);
+    jack->unequip(2);
+    
+    std::cout << "__________________________________________" << std::endl;
+	std::cout << "__________________________________________" << std::endl;
+    
+    jack->use(0, *john);
+    jack->use(1, *john);
+    jack->use(2, *john);
+    jack->use(3, *john);
+    jack->use(4, *john);
 
-    jeck->use(0, *john);
-    jeck->use(1, *john);
-    jeck->use(2, *john);
-    jeck->use(3, *john);
-    jeck->use(4, *john);
-    
-    // std::cout << "TEST COPY" <<std::endl;
-    // temp1 = src1->createMateria("ice");
-    // test->equip(temp1);
-    // test->use(0, *jeck);
-    
-    
-    delete jeck;
+    delete jack;
     delete john;
     delete src1;
    

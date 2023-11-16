@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:45:51 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 18:01:40 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:27:42 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ AMateria *Cure::clone() const {
 }
 
 void Cure::use(ICharacter &target) {
-    std::cout << "* heals " << target.getName()<< "'s wounds *" << std::endl;
+    std::cout << BLUE << "* heals " << target.getName()<< "'s wounds *" << RESET << std::endl;
 }

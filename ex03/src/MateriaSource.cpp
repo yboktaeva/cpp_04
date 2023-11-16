@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 22:40:20 by yuliaboktae       #+#    #+#             */
-/*   Updated: 2023/11/15 17:48:19 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:31:08 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ MateriaSource &MateriaSource::operator=(MateriaSource const& rhs) {
 
 void MateriaSource::learnMateria(AMateria* m) {
     if (!m) {
-        std::cout << "No materia, nothing to learn!" << std::endl;
+        std::cout << GREEN << "No materia, nothing to learn!" << RESET << std::endl;
         return ;
     }
     if (materiaCount >= 4) {
-        std::cout << "Cannot learn Materia! No more place" << std::endl;
+        std::cout << GREEN << "Cannot learn Materia! No more place" << RESET << std::endl;
         return ;
     }
     for (int i = 0; i < 4; ++i) {
         if (inventory[i] != NULL && (m->getType() == inventory[i]->getType())) {
-            std::cout << "Materia " << m->getType() << " already exist!" << std::endl;
+            std::cout << GREEN << "Materia " << m->getType() << " already exist!" << RESET << std::endl;
             delete m;
             return ;
         }
@@ -65,6 +65,6 @@ AMateria* MateriaSource::createMateria(const std::string& type) {
         if (inventory[i] && inventory[i]->getType() == type)
             return (inventory[i]->clone());
     }
-    std::cout << "Unknown Materia " << type << ". Cannot create it!" << std::endl; 
+    std::cout << GREEN << "Unknown Materia " << type << ". Cannot create it!" << RESET << std::endl; 
     return 0;
 }

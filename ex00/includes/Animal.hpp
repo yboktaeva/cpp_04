@@ -6,12 +6,16 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:42 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 16:21:01 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:54:42 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
+
+# define BLUE "\033[1;34m"
+# define GREEN "\033[1;32m"
+# define RESET "\033[0m"
 
 # include <iostream>
 # include <string>

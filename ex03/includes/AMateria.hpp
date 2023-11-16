@@ -6,12 +6,16 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:33:11 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/14 15:11:57 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:27:04 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
+
+# define BLUE "\033[1;34m"
+# define GREEN "\033[1;32m"
+# define RESET "\033[0m"
 
 # include <iostream>
 # include <string>

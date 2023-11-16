@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:03:54 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 19:33:13 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:21:55 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Cat &Cat::operator=(Cat const &rhs) {
 }
 
 void Cat::makeSound() const {
-    std::cout << GREEN << type << " said Meow!" << RESET << std::endl;
+    std::cout << BLUE << type << " said Meow!" << RESET << std::endl;
 }
 
 void Cat::setIdea(std::string idea, int idx) {

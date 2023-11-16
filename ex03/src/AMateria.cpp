@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:43:00 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/14 18:34:30 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:28:55 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ std::string const& AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
-    std::cout << "* uses some materia at " << target.getName() << std::endl;
+    std::cout << BLUE << "* uses some materia at " << target.getName() << RESET << std::endl;
 }

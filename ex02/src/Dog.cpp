@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:17 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/15 19:33:40 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:22:08 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Dog &Dog::operator=(Dog const &rhs) {
 }
 
 void Dog::makeSound() const {
-    std::cout  << GREEN << type << " said Woof!" << RESET << std::endl;
+    std::cout  << BLUE << type << " said Woof!" << RESET << std::endl;
 }
 
 void Dog::setIdea(std::string idea, int idx) {

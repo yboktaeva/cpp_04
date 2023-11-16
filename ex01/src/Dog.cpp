@@ -6,25 +6,26 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:04:17 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/13 17:09:45 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:20:04 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog(): Animal("Dog") {
+	idx = 0;
 	_brain = new Brain;
-	std::cout << "Default constructor called for " << type << std::endl;
+    std::cout << "Default constructor called for " << type << std::endl;
 }
 
 Dog::~Dog() {
-	delete (_brain);
-	std::cout << type << " is destructed" << std::endl;
+	delete(_brain);
+    std::cout << type << " is destructed" << std::endl;      
 }
 
-Dog::Dog(Dog const &other) : Animal(other) {
+Dog::Dog(Dog const &other): Animal(other) {
 	type = other.type;
-	_brain = new Brain(*other._brain);
+    _brain = new Brain(*other._brain);
 	std::cout << type << " is constructed via Copy constructor from " << other.type << std::endl;
 }
 
@@ -40,13 +41,13 @@ Dog &Dog::operator=(Dog const &rhs) {
 }
 
 void Dog::makeSound() const {
-	std::cout << type << " said Woof!" << std::endl;
+    std::cout  << BLUE << type << " said Woof!" << RESET << std::endl;
 }
 
-void Dog::setIdea(std::string idea) {
-	this->_brain->setIdea(idea);
+void Dog::setIdea(std::string idea, int idx) {
+	this->_brain->setIdea(idea, idx);
 }
 
-std::string Dog::getIdea() const {
-	return (this->_brain->getIdea());
+std::string Dog::getIdea(int idx) const {
+	return this->_brain->getIdea(idx);
 }
